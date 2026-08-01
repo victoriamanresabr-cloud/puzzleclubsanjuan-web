@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #FAF7F2;
+  --color-cream-warm: #EFE7DB;
+  --color-terracotta: #C4623A;
+  --color-terracotta-light: #D4835F;
+  --color-olive: #5A6B3A;
+  --color-olive-light: #8A9B6A;
+  --color-charcoal: #2A2A2A;
+  --color-charcoal-dark: #1A1A1A;
+  --color-warm-border: #E8DDD3;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #FAF7F2;
+  color: #2A2A2A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+html:hover::-webkit-scrollbar {
+  width: 6px;
+  opacity: 1;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(90, 107, 58, 0.3); border-radius: 100px; }
+
+a { text-decoration: none; }
+
+img { display: block; }
+
+/* Responsive adjustments: desktop values live in the components and remain untouched. */
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@media (max-width: 1024px) {
+  .site-nav {
+    padding: 0 32px !important;
+  }
+
+  .site-nav__inner {
+    height: 80px !important;
+  }
+
+  .site-nav__links {
+    gap: 28px !important;
+  }
+
+  .hero-section__content {
+    padding: 0 48px 72px !important;
+  }
+
+  .hero-section__title {
+    font-size: 50px !important;
+  }
+
+  .manifesto-section,
+  .pull-quote-section,
+  .next-event-section,
+  .testimonials-section {
+    padding: 112px 48px !important;
+  }
+
+  .alternating-section {
+    grid-template-columns: 1fr !important;
+    min-height: 0 !important;
+  }
+
+  .alternating-section__text {
+    padding: 88px 48px !important;
+  }
+
+  .alternating-section__photo {
+    min-height: 440px;
+  }
+
+  .alternating-section__photo img {
+    object-fit: cover !important;
+  }
+
+  .testimonials-section__grid,
+  .final-invitation__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .testimonials-section__grid {
+    gap: 56px !important;
+  }
+
+  .testimonials-section__grid > div:nth-child(2) {
+    padding-top: 0 !important;
+  }
+
+  .final-invitation__grid {
+    padding: 120px 48px !important;
+    gap: 64px !important;
+  }
+
+  .site-footer {
+    padding: 72px 48px 44px !important;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 48px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-nav {
+    padding: 0 22px !important;
+  }
+
+  .site-nav__inner {
+    height: 72px !important;
+  }
+
+  .site-nav__brand {
+    gap: 9px !important;
+  }
+
+  .site-nav__brand img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .site-nav__brand > div > div:first-child {
+    font-size: 23px !important;
+  }
+
+  .site-nav__brand > div > div:last-child {
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
+  }
+
+  .site-nav__links {
+    display: none !important;
+  }
+
+  .site-nav__cta {
+    font-size: 12px !important;
+    padding: 10px 14px !important;
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    min-height: 0 !important;
+    height: 85vh !important;
+  }
+
+  .hero-section__image {
+    object-position: 58% center !important;
+  }
+
+  .hero-section__content {
+    padding: 0 22px 32px !important;
+  }
+
+  .hero-section__content > div {
+    max-width: none !important;
+  }
+
+  .hero-section__content > div > div:first-child {
+    margin-bottom: 20px !important;
+  }
+
+  .hero-section__title {
+    font-size: clamp(48px, 12vw, 56px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .hero-section__body {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero-section__actions {
+    align-items: stretch !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .hero-section__actions > a:first-child {
+    padding: 14px 20px !important;
+    text-align: center;
+  }
+
+  .hero-section__actions > a:last-child {
+    display: none !important;
+  }
+
+  .hero-section__scroll-cue {
+    display: none !important;
+  }
+
+  .manifesto-section,
+  .pull-quote-section,
+  .next-event-section,
+  .testimonials-section {
+    padding: 76px 22px !important;
+  }
+
+  .manifesto-section > div > div:first-child {
+    height: 44px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .manifesto-section p:first-of-type {
+    font-size: 29px !important;
+    line-height: 1.42 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .manifesto-section p:last-of-type {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 34px !important;
+  }
+
+  .manifesto-section br,
+  .next-event-section br {
+    display: none;
+  }
+
+  .full-bleed-photo {
+    height: 48svh !important;
+    min-height: 300px;
+  }
+
+  .full-bleed-photo img {
+    width: 100% !important;
+  }
+
+  .alternating-section__text {
+    padding: 68px 22px !important;
+  }
+
+  .alternating-section__text > div {
+    max-width: none !important;
+  }
+
+  .alternating-section__text span {
+    margin-bottom: 18px !important;
+  }
+
+  .alternating-section__text h2 {
+    font-size: clamp(39px, 11vw, 50px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .alternating-section__text p {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+  }
+
+  .alternating-section__photo {
+    min-height: 320px;
+  }
+
+  .pull-quote-section > div > div:first-child {
+    font-size: 60px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .pull-quote-section p {
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .pull-quote-section > div > div:last-child {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+  }
+
+  .pull-quote-section > div > div:last-child > div {
+    display: none;
+  }
+
+  .next-event-section span {
+    margin-bottom: 20px !important;
+  }
+
+  .next-event-section h2 {
+    font-size: clamp(37px, 10vw, 46px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .next-event-section p {
+    font-size: 16px !important;
+  }
+
+  .next-event-section a {
+    display: block !important;
+    padding: 16px 22px !important;
+  }
+
+  .testimonials-section__grid {
+    gap: 48px !important;
+  }
+
+  .testimonials-section__grid p {
+    font-size: 22px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 28px !important;
+  }
+
+  .final-invitation__grid {
+    padding: 88px 22px !important;
+    gap: 42px !important;
+  }
+
+  .final-invitation__grid h2 {
+    font-size: clamp(39px, 11vw, 48px) !important;
+  }
+
+  .final-invitation__grid p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 32px !important;
+  }
+
+  .final-invitation__grid > div:last-child > div:last-child {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+
+  .final-invitation__grid > div:last-child > div:last-child a {
+    padding: 14px 18px !important;
+    text-align: center;
+  }
+
+  .site-footer {
+    padding: 60px 22px 32px !important;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    padding-bottom: 42px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}
+
+/* The hero and compact navbar extend through the requested 767px mobile range. */
+@media (min-width: 721px) and (max-width: 767px) {
+  .site-nav {
+    padding: 0 24px !important;
+  }
+
+  .site-nav__inner {
+    height: 72px !important;
+  }
+
+  .site-nav__brand {
+    gap: 9px !important;
+  }
+
+  .site-nav__brand img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .site-nav__brand > div > div:first-child {
+    font-size: 23px !important;
+  }
+
+  .site-nav__brand > div > div:last-child {
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
+  }
+
+  .site-nav__links {
+    display: none !important;
+  }
+
+  .site-nav__cta {
+    font-size: 12px !important;
+    padding: 10px 14px !important;
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    min-height: 0 !important;
+    height: 85vh !important;
+  }
+
+  .hero-section__content {
+    padding: 0 24px 32px !important;
+  }
+
+  .hero-section__content > div {
+    max-width: none !important;
+  }
+
+  .hero-section__content > div > div:first-child {
+    margin-bottom: 20px !important;
+  }
+
+  .hero-section__title {
+    font-size: clamp(48px, 7vw, 56px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .hero-section__body {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 28px !important;
+  }
+
+  .hero-section__actions {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .hero-section__actions > a:first-child {
+    padding: 14px 20px !important;
+    text-align: center;
+  }
+
+  .hero-section__actions > a:last-child,
+  .hero-section__scroll-cue {
+    display: none !important;
+  }
+}
+
+/* Tablet keeps the primary action while giving the hero a distinct mid-size layout. */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-nav {
+    padding: 0 40px !important;
+  }
+
+  .site-nav__inner {
+    height: 80px !important;
+  }
+
+  .site-nav__brand {
+    gap: 11px !important;
+  }
+
+  .site-nav__brand img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .site-nav__brand > div > div:first-child {
+    font-size: 30px !important;
+  }
+
+  .site-nav__brand > div > div:last-child {
+    font-size: 14px !important;
+    letter-spacing: 0.19em !important;
+  }
+
+  .site-nav__links {
+    display: none !important;
+  }
+
+  .site-nav__cta {
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    min-height: 0 !important;
+    height: 80vh !important;
+  }
+
+  .hero-section__content {
+    padding: 0 40px 60px !important;
+  }
+
+  .hero-section__title {
+    font-size: clamp(52px, 6vw, 64px) !important;
+  }
+
+  .hero-section__actions > a:last-child {
+    display: none !important;
+  }
+}
