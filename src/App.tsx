@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react'
 
 // ─── IMAGE REGISTRY ──────────────────────────────────────────────────────────
 const IMG = {
-  hero:       '/images/hero.jpg',
-  fullBleed1: '/images/experiencia.jpg',
-  altPuzzle:  '/images/comunidad.jpg',
-  altTable:   '/images/encuentro.jpg',
-  altJoy:     '/images/evento.jpg',
-  fullBleed2: '/images/encuentro-secundario.jpg',
-  ctaBg:      '/images/invitacion.jpg',
+  hero:       '/optimized/images/hero.webp',
+  fullBleed1: '/optimized/images/experiencia.webp',
+  altPuzzle:  '/optimized/images/comunidad.webp',
+  altTable:   '/optimized/images/encuentro.webp',
+  altJoy:     '/optimized/images/evento.webp',
+  fullBleed2: '/optimized/images/encuentro-secundario.webp',
+  ctaBg:      '/optimized/images/invitacion.webp',
 }
+
+const PRIORITY_FORM_URL = 'https://forms.gle/etgyLXzQyXknKxfw9'
 
 // ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
 const T = {
@@ -74,7 +76,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
   }}
 >
   <img
-    src="/images/logo-icon-pcsj.png"
+    src="/optimized/images/logo-icon-pcsj.webp"
     alt="Puzzle Club"
     style={{
       width: 56,
@@ -317,8 +319,6 @@ function PullQuoteSection({ quote, name, detail }: { quote: string; name: string
 
 // ─── NEXT EVENT ───────────────────────────────────────────────────────────────
 function NextEventSection() {
-  const priorityFormUrl = 'https://forms.gle/etgyLXzQyXknKxfw9'
-
   return (
     <section
       id="fecha"
@@ -393,7 +393,7 @@ function NextEventSection() {
         </p>
 
         <a
-          href={priorityFormUrl}
+          href={PRIORITY_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -507,50 +507,40 @@ function FinalInvitation() {
 
 // ─── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
-  const cols = [
-    { title: 'Experiencia', links: ['La experiencia', 'Próxima fecha', 'Ediciones anteriores', 'Premios'] },
-    { title: 'Info',        links: ['Preguntas frecuentes', 'Política de reembolso', 'Contacto'] },
-    { title: 'Seguinos',    links: ['Instagram', 'WhatsApp', 'Newsletter'] },
-  ]
-
   return (
-    <footer className="site-footer" style={{ backgroundColor: T.dark, padding: '80px 80px 52px' }}>
+    <footer className="site-footer" style={{ backgroundColor: T.dark, borderTop: '1px solid rgba(255,255,255,0.08)', padding: '80px 80px 52px' }}>
       <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-        <div className="site-footer__grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 72, paddingBottom: 72, marginBottom: 52, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="site-footer__grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 72, paddingBottom: 56, marginBottom: 32, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           <div>
-            <div style={{ fontFamily: font.display, fontSize: 20, fontWeight: 700, color: T.white, lineHeight: 1.1, marginBottom: 4 }}>
-              Puzzle Club
+            <div style={{ fontFamily: font.display, fontSize: 26, fontWeight: 700, color: T.white, lineHeight: 1.1, marginBottom: 18 }}>
+              Puzzle Club San Juan
             </div>
-            <div style={{ fontFamily: font.body, fontSize: 9.5, fontWeight: 700, color: T.terracotta, letterSpacing: '0.18em', textTransform: 'uppercase' as const, marginBottom: 28 }}>
-              San Juan
-            </div>
-            <p style={{ fontFamily: font.body, fontSize: 14, color: 'rgba(255,255,255,0.32)', lineHeight: 1.8, maxWidth: 260 }}>
-              Una tarde especial te está esperando. Rompecabezas, merienda y personas increíbles.
+            <p style={{ fontFamily: font.body, fontSize: 15, color: 'rgba(255,255,255,0.56)', lineHeight: 1.8, maxWidth: 300 }}>
+              Una tarde distinta, una pieza a la vez.
             </p>
           </div>
 
-          {cols.map((col) => (
-            <div key={col.title}>
-              <div style={{ fontFamily: font.body, fontSize: 10, fontWeight: 700, color: 'rgba(255,255,255,0.22)', letterSpacing: '0.16em', textTransform: 'uppercase' as const, marginBottom: 24 }}>
-                {col.title}
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                {col.links.map(link => (
-                  <a key={link} href="#" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 500, color: 'rgba(255,255,255,0.4)' }}>
-                    {link}
-                  </a>
-                ))}
-              </div>
+          <div>
+            <div style={{ fontFamily: font.body, fontSize: 10, fontWeight: 700, color: 'rgba(255,255,255,0.36)', letterSpacing: '0.16em', textTransform: 'uppercase' as const, marginBottom: 20 }}>
+              Contacto
             </div>
-          ))}
+            <div className="site-footer__links" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <a href="https://www.instagram.com/puzzleclubsj" target="_blank" rel="noopener noreferrer" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
+                Instagram
+              </a>
+              <a href="mailto:puzzleclubsj.com.ar" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
+                Email
+              </a>
+              <a href={PRIORITY_FORM_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
+                Lista de prioridad
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="site-footer__bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontFamily: font.body, fontSize: 13, color: 'rgba(255,255,255,0.2)' }}>
-             © 2026 Puzzle Club San Juan
-          </span>
-          <span style={{ fontFamily: font.body, fontSize: 13, color: 'rgba(255,255,255,0.2)' }}>
-            Hecho con amor en San Juan, Argentina
+            © 2026 Puzzle Club San Juan. Todos los derechos reservados.
           </span>
         </div>
       </div>

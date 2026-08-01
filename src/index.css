@@ -124,7 +124,7 @@ body,
   }
 
   .site-footer__grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
     gap: 48px !important;
   }
 }
