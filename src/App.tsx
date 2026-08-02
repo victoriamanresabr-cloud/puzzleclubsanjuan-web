@@ -280,6 +280,91 @@ function ManifestoSection() {
   )
 }
 
+// ─── HOW IT WORKS ────────────────────────────────────────────────────────────
+function StepIcon({ step }: { step: number }) {
+  const common = { stroke: T.textMuted, strokeWidth: 1.5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
+
+  if (step === 1) {
+    return (
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <circle cx="12" cy="11" r="4" {...common} />
+        <path d="M4.5 27c.7-5.1 3.2-7.7 7.5-7.7s6.8 2.6 7.5 7.7" {...common} />
+        <circle cx="23.5" cy="13" r="3.2" {...common} />
+        <path d="M21.5 19.8c4.6.2 7.1 2.6 7.5 7.2" {...common} />
+      </svg>
+    )
+  }
+
+  if (step === 2) {
+    return (
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <path d="M8 8h7.3c-.7 1.1-1 2.2-.7 3.2.5 1.7 2.2 2.7 3.9 2.2 1.4-.4 2.3-1.7 2.3-3.1 0-.9-.4-1.7-1-2.3H26v7.1c1.1-.7 2.2-1 3.2-.7 1.7.5 2.7 2.2 2.2 3.9-.4 1.4-1.7 2.3-3.1 2.3-.9 0-1.7-.4-2.3-1V26h-7.2c.7 1.1 1 2.2.7 3.2-.5 1.7-2.2 2.7-3.9 2.2-1.4-.4-2.3-1.7-2.3-3.1 0-.9.4-1.7 1-2.3H8V8Z" {...common} />
+      </svg>
+    )
+  }
+
+  return (
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <path d="M9 14h16l-1.2 13H10.2L9 14Z" {...common} />
+      <path d="M12 9.5h10M17 5.5v4M13.5 20h7M10.5 27.5h13" {...common} />
+    </svg>
+  )
+}
+
+function HowItWorksSection() {
+  const steps = [
+    {
+      number: '01',
+      title: 'Armá tu equipo',
+      description: 'Vení en pareja o reuní a tus amigos para participar en la categoría de equipos.',
+    },
+    {
+      number: '02',
+      title: 'Resolvé el rompecabezas',
+      description: 'Cada categoría recibe un rompecabezas asignado y, cuando empieza el cronómetro, comienza el desafío.',
+    },
+    {
+      number: '03',
+      title: 'Disfrutá la experiencia',
+      description: 'Premios, café, concentración, risas y una tarde distinta que seguramente vas a querer repetir.',
+    },
+  ]
+
+  return (
+    <section className="how-it-works-section" style={{ backgroundColor: T.creamWarm, padding: '132px 80px 136px' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto' }}>
+        <header className="how-it-works-section__header" style={{ maxWidth: 660, margin: '0 auto 64px', textAlign: 'center' }}>
+          <span style={{ display: 'block', fontFamily: font.body, fontSize: 11, fontWeight: 700, color: T.terracotta, letterSpacing: '0.16em', textTransform: 'uppercase' as const, marginBottom: 20 }}>
+            Cómo funciona
+          </span>
+          <h2 className="how-it-works-section__title" style={{ fontFamily: font.display, fontSize: 52, fontWeight: 600, color: T.charcoal, lineHeight: 1.15, letterSpacing: '-0.025em' }}>
+            Tres pasos para vivir la experiencia
+          </h2>
+        </header>
+
+        <div className="how-it-works-section__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 18 }}>
+          {steps.map(({ number, title, description }, index) => (
+            <article className="how-it-works-section__card" key={number} style={{ border: `1px solid ${T.warmBorder}`, padding: '42px 36px 40px', backgroundColor: T.cream }}>
+              <div style={{ height: 38, marginBottom: 32 }}>
+                <StepIcon step={index + 1} />
+              </div>
+              <div style={{ fontFamily: font.display, fontSize: 44, fontWeight: 500, color: T.terracotta, lineHeight: 1, letterSpacing: '-0.03em', marginBottom: 22 }}>
+                {number}
+              </div>
+              <h3 style={{ fontFamily: font.display, fontSize: 27, fontWeight: 600, color: T.charcoal, lineHeight: 1.2, letterSpacing: '-0.02em', marginBottom: 16 }}>
+                {title}
+              </h3>
+              <p style={{ fontFamily: font.body, fontSize: 16, fontWeight: 400, color: T.textMuted, lineHeight: 1.75 }}>
+                {description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─── FULL-BLEED PHOTO ─────────────────────────────────────────────────────────
 function FullBleedPhoto({ src, alt, height = '68vh', position = 'center' }: { src: string; alt: string; height?: string; position?: string }) {
   return (
@@ -608,6 +693,8 @@ export default function App() {
       <SocialProof />
 
       <ManifestoSection />
+
+      <HowItWorksSection />
 
       <FullBleedPhoto
         src={IMG.fullBleed1}

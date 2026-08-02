@@ -61,6 +61,18 @@ body,
 }
 
 @media (max-width: 1024px) {
+  .how-it-works-section {
+    padding: 104px 48px !important;
+  }
+
+  .how-it-works-section__header {
+    margin-bottom: 52px !important;
+  }
+
+  .how-it-works-section__card {
+    padding: 36px 26px 34px !important;
+  }
+
   .social-proof-section {
     padding: 56px 48px 42px !important;
   }
@@ -155,6 +167,27 @@ body,
 }
 
 @media (max-width: 720px) {
+  .how-it-works-section {
+    padding: 76px 22px !important;
+  }
+
+  .how-it-works-section__header {
+    margin-bottom: 40px !important;
+  }
+
+  .how-it-works-section__title {
+    font-size: clamp(38px, 10vw, 48px) !important;
+  }
+
+  .how-it-works-section__grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .how-it-works-section__card {
+    padding: 32px 26px 30px !important;
+  }
+
   .social-proof-section {
     padding: 48px 22px 38px !important;
   }
