@@ -117,6 +117,14 @@ body,
     padding: 112px 48px !important;
   }
 
+  .next-event-section {
+    padding: 132px 48px !important;
+  }
+
+  .next-event-section__date {
+    font-size: clamp(54px, 7vw, 64px) !important;
+  }
+
   .manifesto-section {
     padding: 84px 48px 104px !important;
   }
@@ -364,14 +372,45 @@ body,
     margin-bottom: 20px !important;
   }
 
+  .next-event-section {
+    padding: 88px 22px !important;
+  }
+
   .next-event-section h2 {
     font-size: clamp(37px, 10vw, 46px) !important;
     line-height: 1.08 !important;
     margin-bottom: 12px !important;
   }
 
+  .next-event-section__date {
+    font-size: clamp(42px, 11vw, 52px) !important;
+  }
+
   .next-event-section p {
     font-size: 16px !important;
+  }
+
+  .next-event-section__status {
+    font-size: 11px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .next-event-section__details {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .next-event-section__details p {
+    font-size: 14px !important;
+  }
+
+  .next-event-section__detail-separator {
+    display: none;
+  }
+
+  .next-event-section__description {
+    margin-bottom: 34px !important;
   }
 
   .next-event-section a {

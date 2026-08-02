@@ -446,7 +446,7 @@ function NextEventSection() {
       className="next-event-section"
       style={{
         backgroundColor: T.creamWarm,
-        padding: '150px 80px',
+        padding: '168px 80px',
       }}
     >
       <div
@@ -461,43 +461,58 @@ function NextEventSection() {
             fontFamily: font.body,
             fontSize: 12,
             fontWeight: 700,
-            color: T.olive,
+            color: T.terracotta,
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
             display: 'block',
-            marginBottom: 30,
+            marginBottom: 26,
           }}
         >
-          Próxima edición
+          Próximo encuentro
         </span>
 
         <h2
+          className="next-event-section__date"
           style={{
             fontFamily: font.display,
-            fontSize: 54,
-            fontWeight: 700,
+            fontSize: 68,
+            fontWeight: 600,
             color: T.charcoal,
             lineHeight: 1.1,
             letterSpacing: '-0.025em',
-            marginBottom: 14,
+            marginBottom: 18,
           }}
         >
           Sábado 29 de agosto
         </h2>
 
         <p
+          className="next-event-section__status"
           style={{
             fontFamily: font.body,
-            fontSize: 14,
-            fontStyle: 'italic',
-            color: T.textMuted,
-            marginBottom: 42,
+            fontSize: 12,
+            fontWeight: 700,
+            color: T.terracotta,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            marginBottom: 38,
           }}
         >
           Fecha estimada
         </p>
 
+        <div className="next-event-section__details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginBottom: 40 }}>
+          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
+            Lugar a confirmar
+          </p>
+          <div className="next-event-section__detail-separator" style={{ width: 1, height: 22, backgroundColor: T.warmBorder }} />
+          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
+            Parejas · Equipos
+          </p>
+        </div>
+
         <p
+          className="next-event-section__description"
           style={{
             fontFamily: font.body,
             fontSize: 19,
@@ -505,12 +520,10 @@ function NextEventSection() {
             color: T.textBody,
             lineHeight: 1.8,
             maxWidth: 680,
-            margin: '0 auto 42px',
+            margin: '0 auto 46px',
           }}
         >
-          Estamos preparando una nueva edición de Puzzle Club.
-          <br />
-          Las inscripciones abrirán en los próximos días.
+          Estamos preparando una nueva tarde de rompecabezas. Muy pronto confirmaremos el lugar y abriremos las inscripciones.
         </p>
 
         <a
@@ -527,13 +540,9 @@ function NextEventSection() {
             padding: '18px 46px',
             borderRadius: 100,
             marginBottom: 18,
-
-            boxShadow: '0 12px 30px rgba(204,104,53,.22)',
-                transition: 'all .3s ease',
-
           }}
         >
-          Quiero mi lugar
+          Reservá tu lugar
         </a>
 
         <p
@@ -544,7 +553,7 @@ function NextEventSection() {
             margin: 0,
           }}
         >
-          Sin compromiso. Solo te avisaremos antes que al resto.
+          Sumate a la lista de prioridad y enterate antes que nadie.
         </p>
       </div>
     </section>
