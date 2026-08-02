@@ -495,7 +495,12 @@ function FinalInvitation() {
             <a href="#fecha" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '15px 36px', borderRadius: 100 }}>
               Sumate a la próxima tarde
             </a>
-            <a href="#" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.7)', padding: '15px 28px', borderRadius: 100, border: '1px solid rgba(255,255,255,0.18)' }}>
+            <a
+              href="https://www.instagram.com/puzzleclubsj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.7)', padding: '15px 28px', borderRadius: 100, border: '1px solid rgba(255,255,255,0.18)' }}
+            >
               Mirá más en Instagram
             </a>
           </div>
