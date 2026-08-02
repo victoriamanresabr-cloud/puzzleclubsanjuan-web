@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://puzzleclubsanjuan.com.ar/sitemap.xml
+Sitemap: https://www.puzzleclubsanjuan.com.ar/sitemap.xml
