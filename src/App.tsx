@@ -217,6 +217,43 @@ function HeroSection() {
   )
 }
 
+// ─── SOCIAL PROOF ────────────────────────────────────────────────────────────
+function SocialProof() {
+  const highlights = [
+    { value: '7 ediciones', detail: 'realizadas en San Juan' },
+    { value: '+225 participaciones', detail: 'alrededor de una mesa y un rompecabezas' },
+    { value: 'Parejas y equipos', detail: 'dos maneras de vivir la experiencia' },
+  ]
+
+  return (
+    <section
+      className="social-proof-section"
+      aria-label="La experiencia de Puzzle Club en números"
+      style={{ backgroundColor: T.cream, padding: '76px 80px' }}
+    >
+      <dl
+        className="social-proof-section__grid"
+        style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' }}
+      >
+        {highlights.map(({ value, detail }) => (
+          <div
+            className="social-proof-section__item"
+            key={value}
+            style={{ padding: '8px 56px', textAlign: 'center' }}
+          >
+            <dt style={{ fontFamily: font.display, fontSize: 36, fontWeight: 600, color: T.charcoal, letterSpacing: '-0.025em', lineHeight: 1.15, marginBottom: 12 }}>
+              {value}
+            </dt>
+            <dd style={{ fontFamily: font.body, fontSize: 15, fontWeight: 600, color: T.terracotta, lineHeight: 1.55, margin: 0 }}>
+              {detail}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
+}
+
 // ─── MANIFESTO ────────────────────────────────────────────────────────────────
 function ManifestoSection() {
   return (
@@ -568,6 +605,8 @@ export default function App() {
       <Navbar scrolled={scrolled} />
 
       <HeroSection />
+
+      <SocialProof />
 
       <ManifestoSection />
 

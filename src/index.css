@@ -48,6 +48,10 @@ a { text-decoration: none; }
 
 img { display: block; }
 
+.social-proof-section__item + .social-proof-section__item {
+  border-left: 1px solid var(--color-warm-border);
+}
+
 /* Responsive adjustments: desktop values live in the components and remain untouched. */
 html,
 body,
@@ -57,6 +61,24 @@ body,
 }
 
 @media (max-width: 1024px) {
+  .social-proof-section {
+    padding: 64px 48px !important;
+  }
+
+  .social-proof-section__grid {
+    grid-template-columns: 1fr !important;
+    max-width: 620px !important;
+  }
+
+  .social-proof-section__item {
+    padding: 28px 0 !important;
+  }
+
+  .social-proof-section__item + .social-proof-section__item {
+    border-top: 1px solid var(--color-warm-border);
+    border-left: 0;
+  }
+
   .site-nav {
     padding: 0 32px !important;
   }
@@ -130,6 +152,10 @@ body,
 }
 
 @media (max-width: 720px) {
+  .social-proof-section {
+    padding: 52px 22px !important;
+  }
+
   .site-nav {
     padding: 0 22px !important;
   }
