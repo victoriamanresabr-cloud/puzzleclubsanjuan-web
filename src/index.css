@@ -61,6 +61,14 @@ body,
 }
 
 @media (max-width: 1024px) {
+  .faq-section {
+    padding: 112px 48px !important;
+  }
+
+  .faq-section__header {
+    margin-bottom: 52px !important;
+  }
+
   .how-it-works-section {
     padding: 104px 48px !important;
   }
@@ -175,6 +183,33 @@ body,
 }
 
 @media (max-width: 720px) {
+  .faq-section {
+    padding: 76px 22px !important;
+  }
+
+  .faq-section__header {
+    margin-bottom: 40px !important;
+  }
+
+  .faq-section__title {
+    font-size: clamp(37px, 10vw, 46px) !important;
+  }
+
+  .faq-section__trigger {
+    gap: 20px !important;
+    padding: 22px 0 !important;
+  }
+
+  .faq-section__question {
+    font-size: 20px !important;
+  }
+
+  .faq-section__answer-inner {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    padding: 0 34px 24px 0 !important;
+  }
+
   .how-it-works-section {
     padding: 76px 22px !important;
   }

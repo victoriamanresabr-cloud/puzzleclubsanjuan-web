@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import FaqSection from './components/FaqSection'
 
 // ─── IMAGE REGISTRY ──────────────────────────────────────────────────────────
 const IMG = {
@@ -754,6 +755,8 @@ export default function App() {
       />
 
       <NextEventSection />
+
+      <FaqSection />
 
       <TestimonialsSection />
 
