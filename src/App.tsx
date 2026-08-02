@@ -229,7 +229,7 @@ function SocialProof() {
     <section
       className="social-proof-section"
       aria-label="La experiencia de Puzzle Club en números"
-      style={{ backgroundColor: T.cream, padding: '76px 80px' }}
+      style={{ backgroundColor: T.cream, padding: '68px 80px 48px' }}
     >
       <dl
         className="social-proof-section__grid"
@@ -257,17 +257,16 @@ function SocialProof() {
 // ─── MANIFESTO ────────────────────────────────────────────────────────────────
 function ManifestoSection() {
   return (
-    <section className="manifesto-section" style={{ backgroundColor: T.cream, padding: '160px 80px' }}>
+    <section className="manifesto-section" style={{ backgroundColor: T.cream, padding: '96px 80px 128px' }}>
       <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-        <div style={{ width: 1, height: 64, backgroundColor: T.warmBorder, margin: '0 auto 72px' }} />
-
-        <p style={{ fontFamily: font.display, fontSize: 40, fontWeight: 400, fontStyle: 'italic', color: T.charcoal, lineHeight: 1.55, letterSpacing: '-0.01em', marginBottom: 36 }}>
-          "A veces, lo único que hace falta es una mesa, un desafío, <br /> y alguien con quien compartirlo."
-        </p>
-
-        <p style={{ fontFamily: font.body, fontSize: 18, fontWeight: 400, color: T.textMuted, lineHeight: 1.9, marginBottom: 56 }}>
-          Puzzle Club nació para dejar el celular un rato, concentrarse en algo distinto y compartir una tarde con otras personas. Algunas vienen a competir, <br /> otras a pasarla bien. Todas terminan queriendo volver.
-        </p>
+        <div className="manifesto-section__body" style={{ marginBottom: 56 }}>
+          <p style={{ fontFamily: font.body, fontSize: 18, fontWeight: 400, color: T.textMuted, lineHeight: 1.9 }}>
+            Puzzle Club San Juan nació para crear un espacio donde es posible desconectarse de las pantallas y encontrarse con otras personas. Cada encuentro reúne a amigos, familias y desconocidos alrededor de un mismo desafío: completar un rompecabezas y disfrutar el proceso.
+          </p>
+          <p style={{ fontFamily: font.body, fontSize: 18, fontWeight: 400, color: T.textMuted, lineHeight: 1.9, marginTop: 24 }}>
+            No hace falta experiencia, solo ganas de pasar una tarde diferente.
+          </p>
+        </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, justifyContent: 'center' }}>
           <div style={{ height: 1, width: 48, backgroundColor: T.warmBorder }} />

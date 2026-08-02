@@ -62,7 +62,7 @@ body,
 
 @media (max-width: 1024px) {
   .social-proof-section {
-    padding: 64px 48px !important;
+    padding: 56px 48px 42px !important;
   }
 
   .social-proof-section__grid {
@@ -99,11 +99,14 @@ body,
     font-size: 50px !important;
   }
 
-  .manifesto-section,
   .pull-quote-section,
   .next-event-section,
   .testimonials-section {
     padding: 112px 48px !important;
+  }
+
+  .manifesto-section {
+    padding: 84px 48px 104px !important;
   }
 
   .alternating-section {
@@ -153,7 +156,7 @@ body,
 
 @media (max-width: 720px) {
   .social-proof-section {
-    padding: 52px 22px !important;
+    padding: 48px 22px 38px !important;
   }
 
   .site-nav {
@@ -244,31 +247,25 @@ body,
     display: none !important;
   }
 
-  .manifesto-section,
   .pull-quote-section,
   .next-event-section,
   .testimonials-section {
     padding: 76px 22px !important;
   }
 
-  .manifesto-section > div > div:first-child {
-    height: 44px !important;
-    margin-bottom: 40px !important;
+  .manifesto-section {
+    padding: 62px 22px 76px !important;
   }
 
-  .manifesto-section p:first-of-type {
-    font-size: 29px !important;
-    line-height: 1.42 !important;
-    margin-bottom: 24px !important;
-  }
-
-  .manifesto-section p:last-of-type {
-    font-size: 16px !important;
-    line-height: 1.7 !important;
+  .manifesto-section__body {
     margin-bottom: 34px !important;
   }
 
-  .manifesto-section br,
+  .manifesto-section__body p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
   .next-event-section br {
     display: none;
   }
