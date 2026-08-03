@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import FaqSection from './components/FaqSection'
 import FloatingReserveButton from './components/FloatingReserveButton'
+import GallerySection from './components/GallerySection'
 import useScrollTracking from './hooks/useScrollTracking'
 import { trackEvent } from './utils/analytics'
 
@@ -142,6 +143,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
         <a
           className="site-nav__cta"
           href="#fecha"
+          data-floating-cta
           onClick={() => trackEvent('click_reserva', {
             button_text: 'Reservá tu lugar',
             button_location: 'navbar',
@@ -768,6 +770,8 @@ export default function App() {
       <ManifestoSection />
 
       <HowItWorksSection />
+
+      <GallerySection />
 
       <FullBleedPhoto
         src={IMG.fullBleed1}

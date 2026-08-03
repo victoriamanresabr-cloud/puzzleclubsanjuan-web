@@ -65,6 +65,23 @@ body,
 }
 
 @media (max-width: 1024px) {
+  .gallery-section {
+    padding: 104px 48px 96px !important;
+  }
+
+  .gallery-section__header {
+    margin-bottom: 48px !important;
+  }
+
+  .gallery-section__grid {
+    column-count: 2 !important;
+    column-gap: 14px !important;
+  }
+
+  .gallery-section__item {
+    margin-bottom: 14px !important;
+  }
+
   .faq-section {
     padding: 112px 48px !important;
   }
@@ -187,6 +204,27 @@ body,
 }
 
 @media (max-width: 720px) {
+  .gallery-section {
+    padding: 76px 22px 68px !important;
+  }
+
+  .gallery-section__header {
+    margin-bottom: 40px !important;
+  }
+
+  .gallery-section__title {
+    font-size: clamp(37px, 10vw, 46px) !important;
+  }
+
+  .gallery-section__grid {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+
+  .gallery-section__item {
+    margin-bottom: 14px !important;
+  }
+
   .faq-section {
     padding: 76px 22px !important;
   }
@@ -512,6 +550,27 @@ body,
 
 /* The hero and compact navbar extend through the requested 767px mobile range. */
 @media (min-width: 721px) and (max-width: 767px) {
+  .gallery-section {
+    padding: 76px 24px 68px !important;
+  }
+
+  .gallery-section__header {
+    margin-bottom: 40px !important;
+  }
+
+  .gallery-section__title {
+    font-size: clamp(37px, 8vw, 46px) !important;
+  }
+
+  .gallery-section__grid {
+    column-count: 1 !important;
+    column-gap: 0 !important;
+  }
+
+  .gallery-section__item {
+    margin-bottom: 14px !important;
+  }
+
   .site-nav {
     padding: 0 24px !important;
   }
