@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import FaqSection from './components/FaqSection'
 import FloatingReserveButton from './components/FloatingReserveButton'
 import GallerySection from './components/GallerySection'
+import PressSection from './components/PressSection'
 import useScrollTracking from './hooks/useScrollTracking'
 import { trackEvent } from './utils/analytics'
 
@@ -765,6 +766,8 @@ export default function App() {
       <HeroSection />
 
       <SocialProof />
+
+      <PressSection />
 
       <ManifestoSection />
 
