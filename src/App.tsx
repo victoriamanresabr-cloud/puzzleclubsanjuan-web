@@ -12,7 +12,6 @@ const IMG = {
   altPuzzle:  '/optimized/images/comunidad.webp',
   altTable:   '/optimized/images/encuentro.webp',
   altJoy:     '/optimized/images/evento.webp',
-  fullBleed2: '/optimized/images/encuentro-secundario.webp',
   ctaBg:      '/optimized/images/invitacion.webp',
 }
 
@@ -767,8 +766,6 @@ export default function App() {
 
       <SocialProof />
 
-      <PressSection />
-
       <ManifestoSection />
 
       <HowItWorksSection />
@@ -809,16 +806,11 @@ export default function App() {
         detail="Edición #4"
       />
 
-      <FullBleedPhoto
-        src={IMG.fullBleed2}
-        alt="Cuatro personas concentradas alrededor de una mesa larga de madera"
-        height="62vh"
-        position="center 60%"
-      />
-
       <NextEventSection />
 
       <FaqSection />
+
+      <PressSection />
 
       <TestimonialsSection />
 
