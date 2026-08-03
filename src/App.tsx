@@ -21,6 +21,7 @@ const PRIORITY_FORM_URL = 'https://forms.gle/etgyLXzQyXknKxfw9'
 const T = {
   terracotta:  '#C4623A',
   olive:       '#5A6B3A',
+  oliveDark:   '#5A5B3F',
   charcoal:    '#2A2A2A',
   dark:        '#1A1A1A',
   cream:       '#FAF7F2',
@@ -412,25 +413,6 @@ function AlternatingSection({ reversed, eyebrow, headline, body, img, alt, id }:
   )
 }
 
-// ─── PULL QUOTE ───────────────────────────────────────────────────────────────
-function PullQuoteSection({ quote, name, detail }: { quote: string; name: string; detail: string }) {
-  return (
-    <section className="pull-quote-section" style={{ backgroundColor: T.cream, padding: '160px 80px' }}>
-      <div style={{ maxWidth: 820, margin: '0 auto' }}>
-        <div style={{ fontFamily: font.display, fontSize: 72, fontWeight: 700, color: T.terracotta, lineHeight: 0.75, marginBottom: 36, opacity: 0.35 }}>"</div>
-        <p style={{ fontFamily: font.display, fontSize: 32, fontWeight: 400, fontStyle: 'italic', color: T.charcoal, lineHeight: 1.5, letterSpacing: '-0.015em', marginBottom: 44 }}>
-          {quote}
-        </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
-          <div style={{ width: 36, height: 1, backgroundColor: T.warmBorder }} />
-          <span style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: T.charcoal }}>{name}</span>
-          <span style={{ fontFamily: font.body, fontSize: 14, fontWeight: 400, color: T.textMuted }}>— {detail}</span>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ─── NEXT EVENT ───────────────────────────────────────────────────────────────
 function NextEventSection() {
   return (
@@ -567,22 +549,36 @@ function TestimonialsSection() {
   ]
 
   return (
-    <section id="testimonios" className="testimonials-section" style={{ backgroundColor: T.charcoal, padding: '160px 80px' }}>
-      <div className="testimonials-section__grid" style={{ maxWidth: 1440, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 96 }}>
+    <section id="testimonios" className="testimonials-section" style={{ backgroundColor: T.oliveDark, padding: '156px 80px' }}>
+      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
+        <div className="testimonials-section__featured" style={{ maxWidth: 860, margin: '0 auto 96px', textAlign: 'center' }}>
+          <div style={{ fontFamily: font.display, fontSize: 68, fontWeight: 700, color: T.terracotta, lineHeight: 0.75, marginBottom: 34, opacity: 0.62 }}>{'“'}</div>
+          <p style={{ fontFamily: font.display, fontSize: 36, fontWeight: 400, fontStyle: 'italic', color: T.cream, lineHeight: 1.5, letterSpacing: '-0.015em', marginBottom: 40 }}>
+            Fui sola sin saber qué esperar y terminó siendo la mejor tarde en meses. Es exactamente lo que uno necesita para desconectarse.
+          </p>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 18 }}>
+            <div style={{ width: 36, height: 1, backgroundColor: 'rgba(250,247,242,0.26)' }} />
+            <span style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: T.cream }}>Valentina R.</span>
+            <span style={{ fontFamily: font.body, fontSize: 14, fontWeight: 400, color: 'rgba(250,247,242,0.58)' }}>— Edición #4</span>
+          </div>
+        </div>
+
+        <div className="testimonials-section__grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 96 }}>
         {quotes.map((q, i) => (
           <div key={i} style={{ paddingTop: i === 1 ? 72 : 0 }}>
             <div style={{ fontFamily: font.display, fontSize: 56, fontWeight: 700, color: T.terracotta, lineHeight: 0.75, marginBottom: 28, opacity: 0.38 }}>"</div>
-            <p style={{ fontFamily: font.display, fontSize: 24, fontWeight: 400, fontStyle: 'italic', color: T.white, lineHeight: 1.6, letterSpacing: '-0.01em', marginBottom: 36 }}>
+            <p style={{ fontFamily: font.display, fontSize: 24, fontWeight: 400, fontStyle: 'italic', color: T.cream, lineHeight: 1.6, letterSpacing: '-0.01em', marginBottom: 36 }}>
               {q.text}
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              <div style={{ width: 28, height: 1, backgroundColor: 'rgba(255,255,255,0.18)' }} />
-              <span style={{ fontFamily: font.body, fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.48)' }}>
+              <div style={{ width: 28, height: 1, backgroundColor: 'rgba(250,247,242,0.22)' }} />
+              <span style={{ fontFamily: font.body, fontSize: 13, fontWeight: 600, color: 'rgba(250,247,242,0.58)' }}>
                 {q.name} · {q.detail}
               </span>
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   )
@@ -777,12 +773,6 @@ export default function App() {
       <FaqSection />
 
       <PressSection />
-
-      <PullQuoteSection
-        quote="Fui sola sin saber qué esperar y terminó siendo la mejor tarde en meses. Es exactamente lo que uno necesita para desconectarse."
-        name="Valentina R."
-        detail="Edición #4"
-      />
 
       <TestimonialsSection />
 
