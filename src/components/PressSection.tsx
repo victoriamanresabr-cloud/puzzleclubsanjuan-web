@@ -18,7 +18,7 @@ const outlets = [
 
 export default function PressSection() {
   return (
-    <section className="press-section" aria-label="Medios que cubrieron Puzzle Club San Juan" style={{ backgroundColor: T.cream, padding: '36px 80px 0' }}>
+    <section className="press-section" aria-label="Medios que cubrieron Puzzle Club San Juan" style={{ backgroundColor: T.cream, padding: '36px 80px 100px' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto' }}>
         <span style={{ display: 'block', fontFamily: font.body, fontSize: 11, fontWeight: 700, color: T.terracotta, letterSpacing: '0.16em', textAlign: 'center', textTransform: 'uppercase', marginBottom: 32 }}>
           Aparecimos en

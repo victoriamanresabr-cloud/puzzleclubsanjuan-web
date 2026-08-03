@@ -38,6 +38,10 @@ const galleryImages = [
     src: '/gallery/ambiente-13.jpg',
     alt: 'Equipo concentrado resolviendo un rompecabezas',
   },
+  {
+    src: '/gallery/ambiente-14.jpg',
+    alt: 'Participantes celebrando una premiación de Puzzle Club',
+  },
 ]
 
 export default function GallerySection() {

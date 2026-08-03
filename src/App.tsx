@@ -273,32 +273,6 @@ function SocialProof() {
   )
 }
 
-// ─── MANIFESTO ────────────────────────────────────────────────────────────────
-function ManifestoSection() {
-  return (
-    <section className="manifesto-section" style={{ backgroundColor: T.cream, padding: '96px 80px 128px' }}>
-      <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-        <div className="manifesto-section__body" style={{ marginBottom: 56 }}>
-          <p style={{ fontFamily: font.body, fontSize: 18, fontWeight: 400, color: T.textMuted, lineHeight: 1.9 }}>
-            Puzzle Club San Juan nació para crear un espacio donde es posible desconectarse de las pantallas y encontrarse con otras personas. Cada encuentro reúne a amigos, familias y desconocidos alrededor de un mismo desafío: completar un rompecabezas y disfrutar el proceso.
-          </p>
-          <p style={{ fontFamily: font.body, fontSize: 18, fontWeight: 400, color: T.textMuted, lineHeight: 1.9, marginTop: 24 }}>
-            No hace falta experiencia, solo ganas de pasar una tarde diferente.
-          </p>
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, justifyContent: 'center' }}>
-          <div style={{ height: 1, width: 48, backgroundColor: T.warmBorder }} />
-          <span style={{ fontFamily: font.body, fontSize: 10.5, fontWeight: 700, color: '#ACACAC', letterSpacing: '0.14em', textTransform: 'uppercase' as const }}>
-              San Juan, Argentina
-          </span>
-          <div style={{ height: 1, width: 48, backgroundColor: T.warmBorder }} />
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ─── HOW IT WORKS ────────────────────────────────────────────────────────────
 function StepIcon({ step }: { step: number }) {
   const common = { stroke: T.textMuted, strokeWidth: 1.5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
@@ -350,7 +324,7 @@ function HowItWorksSection() {
   ]
 
   return (
-    <section className="how-it-works-section" style={{ backgroundColor: T.creamWarm, padding: '132px 80px 136px' }}>
+    <section className="how-it-works-section" style={{ backgroundColor: T.creamWarm, padding: '88px 80px 136px' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto' }}>
         <header className="how-it-works-section__header" style={{ maxWidth: 660, margin: '0 auto 64px', textAlign: 'center' }}>
           <span style={{ display: 'block', fontFamily: font.body, fontSize: 11, fontWeight: 700, color: T.terracotta, letterSpacing: '0.16em', textTransform: 'uppercase' as const, marginBottom: 20 }}>
@@ -765,8 +739,6 @@ export default function App() {
       <HeroSection />
 
       <SocialProof />
-
-      <ManifestoSection />
 
       <HowItWorksSection />
 
