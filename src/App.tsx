@@ -8,7 +8,6 @@ import { trackEvent } from './utils/analytics'
 // ─── IMAGE REGISTRY ──────────────────────────────────────────────────────────
 const IMG = {
   hero:       '/optimized/images/hero.webp',
-  fullBleed1: '/optimized/images/experiencia.webp',
   altPuzzle:  '/optimized/images/comunidad.webp',
   altTable:   '/optimized/images/encuentro.webp',
   altJoy:     '/optimized/images/evento.webp',
@@ -772,13 +771,6 @@ export default function App() {
       <HowItWorksSection />
 
       <GallerySection />
-
-      <FullBleedPhoto
-        src={IMG.fullBleed1}
-        alt="Grupo de personas riendo y conectando alrededor de una mesa"
-        height="68vh"
-        position="center 58%"
-      />
 
       <AlternatingSection
         id="experiencia"
