@@ -48,6 +48,10 @@ a { text-decoration: none; }
 
 img { display: block; }
 
+.floating-reserve-button {
+  display: none;
+}
+
 .social-proof-section__item + .social-proof-section__item {
   border-left: 1px solid var(--color-warm-border);
 }
@@ -641,5 +645,39 @@ body,
 
   .hero-section__actions > a:last-child {
     display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .floating-reserve-button {
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 20px;
+    border-radius: 999px;
+    background-color: #C4623A;
+    box-shadow: 0 7px 18px rgba(84, 48, 30, 0.2);
+    color: #FFFFFF;
+    font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .floating-reserve-button--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+  }
+
+  .floating-reserve-button:focus-visible {
+    outline: 2px solid #2A2A2A;
+    outline-offset: 3px;
   }
 }

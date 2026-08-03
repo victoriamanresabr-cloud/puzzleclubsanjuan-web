@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import FaqSection from './components/FaqSection'
+import FloatingReserveButton from './components/FloatingReserveButton'
 import useScrollTracking from './hooks/useScrollTracking'
 import { trackEvent } from './utils/analytics'
 
@@ -822,6 +823,8 @@ export default function App() {
       <FinalInvitation />
 
       <Footer />
+
+      <FloatingReserveButton destinationUrl={PRIORITY_FORM_URL} />
     </div>
   )
 }
