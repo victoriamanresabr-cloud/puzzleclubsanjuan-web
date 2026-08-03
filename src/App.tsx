@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import FaqSection from './components/FaqSection'
+import useScrollTracking from './hooks/useScrollTracking'
+import { trackEvent } from './utils/analytics'
 
 // ─── IMAGE REGISTRY ──────────────────────────────────────────────────────────
 const IMG = {
@@ -139,6 +141,11 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
         <a
           className="site-nav__cta"
           href="#fecha"
+          onClick={() => trackEvent('click_reserva', {
+            button_text: 'Reservá tu lugar',
+            button_location: 'navbar',
+            destination_url: '#fecha',
+          })}
           style={{
             fontFamily: font.body,
             fontSize: 14,
@@ -195,7 +202,15 @@ function HeroSection() {
           </p>
 
           <div className="hero-section__actions" style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
-            <a href="#fecha" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '14px 34px', borderRadius: 100 }}>
+            <a
+              href="#fecha"
+              onClick={() => trackEvent('click_reserva', {
+                button_text: 'Conocé cuándo es la próxima',
+                button_location: 'hero',
+                destination_url: '#fecha',
+              })}
+              style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '14px 34px', borderRadius: 100 }}
+            >
               Conocé cuándo es la próxima
             </a>
             <a href="#experiencia" style={{ display: 'flex', alignItems: 'center', gap: 12, fontFamily: font.body, fontSize: 14, fontWeight: 600, color: T.white }}>
@@ -531,6 +546,11 @@ function NextEventSection() {
           href={PRIORITY_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent('click_reserva', {
+            button_text: 'Reservá tu lugar',
+            button_location: 'next_event',
+            destination_url: PRIORITY_FORM_URL,
+          })}
           style={{
             display: 'inline-block',
             fontFamily: font.body,
@@ -623,13 +643,26 @@ function FinalInvitation() {
           </p>
 
           <div style={{ display: 'flex', gap: 16 }}>
-            <a href="#fecha" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '15px 36px', borderRadius: 100 }}>
+            <a
+              href="#fecha"
+              onClick={() => trackEvent('click_reserva', {
+                button_text: 'Sumate a la próxima tarde',
+                button_location: 'final_invitation',
+                destination_url: '#fecha',
+              })}
+              style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '15px 36px', borderRadius: 100 }}
+            >
               Sumate a la próxima tarde
             </a>
             <a
               href="https://www.instagram.com/puzzleclubsj/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('click_instagram', {
+                link_text: 'Mirá más en Instagram',
+                link_location: 'final_invitation',
+                destination_url: 'https://www.instagram.com/puzzleclubsj/',
+              })}
               style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.7)', padding: '15px 28px', borderRadius: 100, border: '1px solid rgba(255,255,255,0.18)' }}
             >
               Mirá más en Instagram
@@ -661,13 +694,37 @@ function Footer() {
               Contacto
             </div>
             <div className="site-footer__links" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <a href="https://www.instagram.com/puzzleclubsj" target="_blank" rel="noopener noreferrer" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
+              <a
+                href="https://www.instagram.com/puzzleclubsj"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('click_instagram', {
+                  link_text: 'Instagram',
+                  link_location: 'footer',
+                  destination_url: 'https://www.instagram.com/puzzleclubsj',
+                })}
+                style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}
+              >
                 Instagram
               </a>
               <a href="mailto:puzzleclubsj.com.ar" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
                 Email
               </a>
-              <a href={PRIORITY_FORM_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}>
+              <a
+                href={PRIORITY_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  const parameters = {
+                    button_text: 'Lista de prioridad',
+                    button_location: 'footer',
+                    destination_url: PRIORITY_FORM_URL,
+                  }
+                  trackEvent('click_reserva', parameters)
+                  trackEvent('click_lista_prioridad', parameters)
+                }}
+                style={{ fontFamily: font.body, fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.68)' }}
+              >
                 Lista de prioridad
               </a>
             </div>
@@ -687,6 +744,8 @@ function Footer() {
 // ─── ROOT ─────────────────────────────────────────────────────────────────────
 export default function App() {
   const [scrolled, setScrolled] = useState(false)
+
+  useScrollTracking()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 56)
