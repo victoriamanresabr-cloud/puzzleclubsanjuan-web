@@ -772,17 +772,17 @@ export default function App() {
         alt="Persona celebrando con alegría genuina en un evento"
       />
 
-      <PullQuoteSection
-        quote="Fui sola sin saber qué esperar y terminó siendo la mejor tarde en meses. Es exactamente lo que uno necesita para desconectarse."
-        name="Valentina R."
-        detail="Edición #4"
-      />
-
       <NextEventSection />
 
       <FaqSection />
 
       <PressSection />
+
+      <PullQuoteSection
+        quote="Fui sola sin saber qué esperar y terminó siendo la mejor tarde en meses. Es exactamente lo que uno necesita para desconectarse."
+        name="Valentina R."
+        detail="Edición #4"
+      />
 
       <TestimonialsSection />
 
