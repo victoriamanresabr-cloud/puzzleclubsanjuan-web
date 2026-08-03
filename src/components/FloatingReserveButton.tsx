@@ -6,41 +6,37 @@ interface FloatingReserveButtonProps {
 }
 
 export default function FloatingReserveButton({ destinationUrl }: FloatingReserveButtonProps) {
-  const [isConversionContentVisible, setIsConversionContentVisible] = useState(false)
+  const [isPrimaryCtaVisible, setIsPrimaryCtaVisible] = useState(false)
 
   useEffect(() => {
-    const sectionsToAvoid = [
-      document.getElementById('fecha'),
-      document.querySelector('.faq-section'),
-      document.querySelector('.site-footer'),
-    ].filter((section): section is Element => section !== null)
+    const primaryCtas = Array.from(document.querySelectorAll('[data-floating-cta]'))
 
-    if (sectionsToAvoid.length === 0) {
+    if (primaryCtas.length === 0) {
       return
     }
 
-    const visibleSections = new Set<Element>()
+    const visibleCtas = new Set<Element>()
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            visibleSections.add(entry.target)
+            visibleCtas.add(entry.target)
           } else {
-            visibleSections.delete(entry.target)
+            visibleCtas.delete(entry.target)
           }
         })
-        setIsConversionContentVisible(visibleSections.size > 0)
+        setIsPrimaryCtaVisible(visibleCtas.size > 0)
       },
       { threshold: 0.15 },
     )
 
-    sectionsToAvoid.forEach((section) => observer.observe(section))
+    primaryCtas.forEach((cta) => observer.observe(cta))
     return () => observer.disconnect()
   }, [])
 
   return (
     <a
-      className={`floating-reserve-button${isConversionContentVisible ? ' floating-reserve-button--hidden' : ''}`}
+      className={`floating-reserve-button${isPrimaryCtaVisible ? ' floating-reserve-button--hidden' : ''}`}
       href={destinationUrl}
       target="_blank"
       rel="noopener noreferrer"

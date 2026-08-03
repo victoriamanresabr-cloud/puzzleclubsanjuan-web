@@ -205,6 +205,7 @@ function HeroSection() {
           <div className="hero-section__actions" style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
             <a
               href="#fecha"
+              data-floating-cta
               onClick={() => trackEvent('click_reserva', {
                 button_text: 'Conocé cuándo es la próxima',
                 button_location: 'hero',
@@ -547,6 +548,7 @@ function NextEventSection() {
           href={PRIORITY_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
+          data-floating-cta
           onClick={() => trackEvent('click_reserva', {
             button_text: 'Reservá tu lugar',
             button_location: 'next_event',
@@ -646,6 +648,7 @@ function FinalInvitation() {
           <div style={{ display: 'flex', gap: 16 }}>
             <a
               href="#fecha"
+              data-floating-cta
               onClick={() => trackEvent('click_reserva', {
                 button_text: 'Sumate a la próxima tarde',
                 button_location: 'final_invitation',
