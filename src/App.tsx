@@ -549,9 +549,12 @@ function TestimonialsSection() {
   ]
 
   return (
-    <section id="testimonios" className="testimonials-section" style={{ backgroundColor: T.oliveDark, padding: '156px 80px' }}>
+    <section id="testimonios" className="testimonials-section" style={{ backgroundColor: T.oliveDark, padding: '106px 80px' }}>
       <div style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div className="testimonials-section__featured" style={{ maxWidth: 860, margin: '0 auto 96px', textAlign: 'center' }}>
+          <span style={{ display: 'block', fontFamily: font.body, fontSize: 11, fontWeight: 700, color: T.terracotta, letterSpacing: '0.16em', textTransform: 'uppercase' as const, marginBottom: 32 }}>
+            Testimonios
+          </span>
           <div style={{ fontFamily: font.display, fontSize: 68, fontWeight: 700, color: T.terracotta, lineHeight: 0.75, marginBottom: 34, opacity: 0.62 }}>{'“'}</div>
           <p style={{ fontFamily: font.display, fontSize: 36, fontWeight: 400, fontStyle: 'italic', color: T.cream, lineHeight: 1.5, letterSpacing: '-0.015em', marginBottom: 40 }}>
             Fui sola sin saber qué esperar y terminó siendo la mejor tarde en meses. Es exactamente lo que uno necesita para desconectarse.
