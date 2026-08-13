@@ -33,6 +33,12 @@ const progressKeys = {
 
 const RAFFLE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJpmroCNcxy5yUM2-SCiqcqcV8SCVCVFP5egbJpqct617T_krWklr7x0hTsiyc_1XDfg/exec'
 const RAFFLE_REQUEST_ERROR = 'request-failed'
+const scanSources = new Set([
+  'calle-a1', 'calle-a2', 'calle-b1', 'calle-b2', 'calle-c1', 'calle-c2',
+  'p1-a', 'p1-b', 'p2-a', 'p2-b', 'p3-a', 'p3-b', 'p4-a', 'p4-b',
+])
+const scanRoutes = new Set([routes.home, routes.one, routes.two, routes.three, routes.four])
+const scansInFlight = new Set<string>()
 
 function remember(key: string) {
   try { localStorage.setItem(key, 'true') } catch { /* localStorage can be unavailable */ }
@@ -44,6 +50,33 @@ function savedTeam() {
 
 function raffleWasSubmitted() {
   try { return localStorage.getItem(progressKeys.raffleSubmitted) === 'true' } catch { return false }
+}
+
+function scanWasRecorded(src: string) {
+  try { return localStorage.getItem(`tesoroScan_${src}`) === 'true' } catch { return false }
+}
+
+function trackScan(src: string, ruta: string) {
+  if (scanWasRecorded(src) || scansInFlight.has(src)) return
+  scansInFlight.add(src)
+
+  void fetch(RAFFLE_ENDPOINT, {
+    method: 'POST',
+    // text/plain avoids a CORS preflight while preserving the JSON payload for Apps Script.
+    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+    body: JSON.stringify({ type: 'scan', src, ruta }),
+  })
+    .then(async (response) => {
+      if (!response.ok) return false
+      const data: unknown = await response.json()
+      return typeof data === 'object' && data !== null && 'ok' in data && data.ok === true
+    })
+    .then((wasRecorded) => {
+      if (!wasRecorded) return
+      try { localStorage.setItem(`tesoroScan_${src}`, 'true') } catch { /* Tracking stays optional. */ }
+    })
+    .catch(() => { /* Tracking failures never affect the experience. */ })
+    .finally(() => scansInFlight.delete(src))
 }
 
 function certificateFilename(teamName: string) {
@@ -78,6 +111,13 @@ function nav(to: string) {
   window.history.pushState({}, '', to)
   window.dispatchEvent(new PopStateEvent('popstate'))
   window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function currentTesoroLocation() {
+  return {
+    path: window.location.pathname.replace(/\/$/, '') || routes.home,
+    search: window.location.search,
+  }
 }
 
 function Brand() {
@@ -281,8 +321,14 @@ function Raffle({ team }: { team: string }) {
 }
 
 export default function TesoroApp() {
-  const [path, setPath] = useState(window.location.pathname.replace(/\/$/, '') || routes.home)
-  useEffect(() => { const update = () => setPath(window.location.pathname.replace(/\/$/, '') || routes.home); window.addEventListener('popstate', update); return () => window.removeEventListener('popstate', update) }, [])
+  const [location, setLocation] = useState(currentTesoroLocation)
+  const { path, search } = location
+  useEffect(() => { const update = () => setLocation(currentTesoroLocation()); window.addEventListener('popstate', update); return () => window.removeEventListener('popstate', update) }, [])
+  useEffect(() => {
+    const src = new URLSearchParams(search).get('src')
+    if (!src || !scanSources.has(src) || !scanRoutes.has(path)) return
+    trackScan(src, path)
+  }, [path, search])
   const Page = useMemo(() => ({ [routes.home]: Home, [routes.one]: PostaOne, [routes.two]: PostaTwo, [routes.three]: PostaThree, [routes.four]: PostaFour, [routes.final]: Final, [routes.winners]: Winners, [routes.certificate]: Certificate }[path] ?? Home), [path])
   return <Page />
 }
