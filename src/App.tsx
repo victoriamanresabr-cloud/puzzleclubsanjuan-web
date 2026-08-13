@@ -5,6 +5,7 @@ import GallerySection from './components/GallerySection'
 import PressSection from './components/PressSection'
 import useScrollTracking from './hooks/useScrollTracking'
 import { trackEvent } from './utils/analytics'
+import TesoroApp from './TesoroApp'
 
 // ─── IMAGE REGISTRY ──────────────────────────────────────────────────────────
 const IMG = {
@@ -721,6 +722,10 @@ function Footer() {
 
 // ─── ROOT ─────────────────────────────────────────────────────────────────────
 export default function App() {
+  if (window.location.pathname.startsWith('/tesoro')) {
+    return <TesoroApp />
+  }
+
   const [scrolled, setScrolled] = useState(false)
 
   useScrollTracking()
