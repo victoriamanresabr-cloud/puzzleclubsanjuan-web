@@ -889,3 +889,6 @@ body,
 .image-detail-hint { color: #655f58; font-size: 14px; margin: 16px 0 -4px; text-align: center; }
 .did-you-know { background: #f5ecd4; border-radius: 14px; color: #655529; font-size: 13px; line-height: 1.5; margin: 16px 0; padding: 14px 16px; }
 .did-you-know strong { display: block; font-size: 14px; margin-bottom: 5px; }
+
+/* Mantiene completa la foto final y compacta el cierre del meta-acertijo. */
+.final-puzzle { margin: 14px auto; max-width: 300px; }
