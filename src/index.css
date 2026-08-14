@@ -854,3 +854,38 @@ body,
   .choice-grid.flowers { gap: 8px; }
   .choice-grid.flowers .image-choice span { font-size: 9px; }
 }
+
+/* Visor de imágenes para desafíos visuales. */
+.image-preview { appearance: none; background: transparent; border: 0; cursor: zoom-in; display: block; padding: 0; width: 100%; }
+.image-preview img { display: block; height: auto; width: 100%; }
+.challenge-main.image-preview { overflow: hidden; }
+.challenge-main.image-preview img { border-radius: 17px; }
+.art-view > .image-preview { border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.image-choice { cursor: default; }
+.image-choice-preview { overflow: hidden; }
+.image-choice-preview img { aspect-ratio: 1 / 1; object-fit: cover; }
+.choice-grid.art .image-choice-preview img { aspect-ratio: auto; object-fit: contain; }
+.choice-grid.flowers .image-choice-preview img { aspect-ratio: .66 / 1; object-fit: cover; }
+.image-choice-select { background: #fff; border: 0; color: #2a2a2a; cursor: pointer; display: block; font: inherit; font-size: 11px; font-weight: 900; padding: 8px 4px; text-transform: uppercase; width: 100%; }
+.image-choice:has(.image-choice-select:hover), .image-choice:has(.image-choice-select:focus-visible) { border-color: #c4623a; }
+.image-choice-select:disabled { cursor: default; opacity: .7; }
+.image-lightbox { align-items: center; background: rgba(17, 16, 14, .93); display: flex; inset: 0; justify-content: center; position: fixed; z-index: 1000; }
+.image-lightbox-stage { align-items: center; display: flex; height: 100%; justify-content: center; overflow: hidden; touch-action: none; width: 100%; }
+.image-lightbox-stage img { max-height: 92vh; max-width: 94vw; object-fit: contain; transform-origin: center; transition: transform .08s linear; user-select: none; will-change: transform; }
+.image-lightbox-close { align-items: center; background: #fff; border: 0; border-radius: 999px; color: #2a2a2a; cursor: pointer; display: flex; font-size: 34px; height: 48px; justify-content: center; line-height: 1; position: fixed; right: max(18px, env(safe-area-inset-right)); top: max(18px, env(safe-area-inset-top)); width: 48px; z-index: 1; }
+.image-lightbox-close:focus-visible, .image-preview:focus-visible { outline: 3px solid #f5c98a; outline-offset: 3px; }
+
+/* Actividades de exploración y preguntas de El Tesoro Fragmentado. */
+.challenge-options { display: grid; gap: 10px; margin: 18px 0; }
+.challenge-option { background: #fff; border: 2px solid #e3d9ce; border-radius: 14px; color: #2a2a2a; cursor: pointer; font: inherit; font-size: 16px; line-height: 1.35; padding: 16px; text-align: left; width: 100%; }
+.challenge-option:hover, .challenge-option:focus-visible { border-color: #c4623a; }
+.challenge-option:disabled { cursor: default; opacity: .7; }
+.challenge-question { color: #5a6b3a; font-family: 'Fraunces', Georgia, serif; font-size: 25px; line-height: 1.15; margin: 24px 0 12px; text-align: center; }
+.explorer-checklist { display: grid; gap: 10px; margin: 18px 0; }
+.explorer-checklist button { align-items: center; background: #fff; border: 2px solid #e3d9ce; border-radius: 14px; color: #2a2a2a; cursor: pointer; display: flex; font: inherit; font-size: 16px; font-weight: 800; gap: 12px; line-height: 1.35; padding: 16px; text-align: left; width: 100%; }
+.explorer-checklist button span { color: #c4623a; font-size: 25px; line-height: 1; }
+.explorer-checklist button.checked { background: #eff3e8; border-color: #5a6b3a; color: #405227; }
+.explorer-checklist button.checked span { color: #5a6b3a; }
+.image-detail-hint { color: #655f58; font-size: 14px; margin: 16px 0 -4px; text-align: center; }
+.did-you-know { background: #f5ecd4; border-radius: 14px; color: #655529; font-size: 13px; line-height: 1.5; margin: 16px 0; padding: 14px 16px; }
+.did-you-know strong { display: block; font-size: 14px; margin-bottom: 5px; }
