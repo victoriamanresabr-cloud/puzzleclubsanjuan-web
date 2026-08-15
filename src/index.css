@@ -892,6 +892,10 @@ body,
 
 /* Mantiene completa la foto final y compacta el cierre del meta-acertijo. */
 .final-puzzle { margin: 14px auto; max-width: 300px; }
+.final-puzzle.completed-puzzle { aspect-ratio: 1072 / 1350; margin: 10px auto 12px; max-width: 260px; }
+.final-puzzle.completed-puzzle > img { display: block; height: 100%; width: 100%; }
+.completed-puzzle-outline { height: 100%; inset: 0; pointer-events: none; position: absolute; width: 100%; }
+.completed-puzzle-outline path { fill: none; filter: drop-shadow(0 1px 1px rgba(27, 38, 32, .38)); stroke: rgba(255, 250, 242, .94); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.1; vector-effect: non-scaling-stroke; }
 .practical-note { border-left: 3px solid #c4623a; color: #655f58; font-size: 13px; line-height: 1.5; margin: 14px 0; padding-left: 13px; }
 .practical-note p + p { margin-top: 7px; }
 .image-detail-hint { background: #fff; border: 1px solid #e3d9ce; border-radius: 12px; margin: 16px 0 0; padding: 12px 14px; }
