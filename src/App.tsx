@@ -146,7 +146,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
           href="#fecha"
           data-floating-cta
           onClick={() => trackEvent('click_reserva', {
-            button_text: 'Reservá tu lugar',
+            button_text: 'Lista de prioridad',
             button_location: 'navbar',
             destination_url: '#fecha',
           })}
@@ -167,7 +167,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
             transition: 'all 0.4s',
           }}
         >
-          Reservá tu lugar
+          Lista de prioridad
         </a>
       </div>
     </nav>
@@ -459,7 +459,7 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Sábado 29 de agosto
+          Sábado 12 de septiembre
         </h2>
 
         <p
@@ -474,18 +474,8 @@ function NextEventSection() {
             marginBottom: 38,
           }}
         >
-          Fecha estimada
+          8va edición · Cupos agotados
         </p>
-
-        <div className="next-event-section__details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginBottom: 40 }}>
-          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
-            Lugar a confirmar
-          </p>
-          <div className="next-event-section__detail-separator" style={{ width: 1, height: 22, backgroundColor: T.warmBorder }} />
-          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
-            Parejas · Equipos
-          </p>
-        </div>
 
         <p
           className="next-event-section__description"
@@ -499,7 +489,8 @@ function NextEventSection() {
             margin: '0 auto 46px',
           }}
         >
-          Estamos preparando una nueva tarde de rompecabezas. Muy pronto confirmaremos el lugar y abriremos las inscripciones.
+          Las entradas para nuestra 8va edición se agotaron en solo 3 horas.<br />
+          ¿Te quedaste afuera? Sumate a la lista de prioridad y enterate antes que nadie cuando abramos la próxima fecha.
         </p>
 
         <a
@@ -508,7 +499,7 @@ function NextEventSection() {
           rel="noopener noreferrer"
           data-floating-cta
           onClick={() => trackEvent('click_reserva', {
-            button_text: 'Reservá tu lugar',
+            button_text: 'Sumarme a la lista de prioridad',
             button_location: 'next_event',
             destination_url: PRIORITY_FORM_URL,
           })}
@@ -524,7 +515,7 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Reservá tu lugar
+          Sumarme a la lista de prioridad
         </a>
 
         <p
@@ -535,8 +526,99 @@ function NextEventSection() {
             margin: 0,
           }}
         >
-          Sumate a la lista de prioridad y enterate antes que nadie.
+          Próxima edición: fecha a confirmar.
         </p>
+      </div>
+    </section>
+  )
+}
+
+// ─── WHATSAPP COMMUNITY ──────────────────────────────────────────────────────
+function WhatsAppCommunitySection() {
+  return (
+    <section
+      className="next-event-section whatsapp-community-section"
+      style={{
+        backgroundColor: T.cream,
+        padding: '128px 80px',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 760,
+          margin: '0 auto',
+          textAlign: 'center',
+        }}
+      >
+        <span
+          style={{
+            fontFamily: font.body,
+            fontSize: 12,
+            fontWeight: 700,
+            color: T.terracotta,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            display: 'block',
+            marginBottom: 26,
+          }}
+        >
+          Sumate a la comunidad
+        </span>
+
+        <h2
+          className="next-event-section__date"
+          style={{
+            fontFamily: font.display,
+            fontSize: 58,
+            fontWeight: 600,
+            color: T.charcoal,
+            lineHeight: 1.1,
+            letterSpacing: '-0.025em',
+            marginBottom: 30,
+          }}
+        >
+          Puzzle Club también sigue entre encuentros 🧩
+        </h2>
+
+        <p
+          className="next-event-section__description"
+          style={{
+            fontFamily: font.body,
+            fontSize: 19,
+            fontWeight: 400,
+            color: T.textBody,
+            lineHeight: 1.8,
+            maxWidth: 640,
+            margin: '0 auto 42px',
+          }}
+        >
+          Novedades, próximas fechas, actividades y avisos importantes de
+          Puzzle Club San Juan, directamente por WhatsApp.
+        </p>
+
+        <a
+          href="https://whatsapp.com/channel/0029VbBwFAX8fewsv1E6Fa3t"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackEvent('click_whatsapp_community', {
+            button_text: 'Unirme a la comunidad',
+            button_location: 'whatsapp_community',
+            destination_url: 'https://whatsapp.com/channel/0029VbBwFAX8fewsv1E6Fa3t',
+          })}
+          style={{
+            display: 'inline-block',
+            fontFamily: font.body,
+            fontSize: 17,
+            fontWeight: 700,
+            backgroundColor: 'transparent',
+            border: `1.5px solid ${T.terracotta}`,
+            color: T.terracotta,
+            padding: '16px 40px',
+            borderRadius: 100,
+          }}
+        >
+          Unirme a la comunidad
+        </a>
       </div>
     </section>
   )
@@ -777,6 +859,8 @@ export default function App() {
       />
 
       <NextEventSection />
+
+      <WhatsAppCommunitySection />
 
       <FaqSection />
 
