@@ -17,6 +17,7 @@ const IMG = {
 }
 
 const PRIORITY_FORM_URL = 'https://forms.gle/etgyLXzQyXknKxfw9'
+const TICKET_URL = 'https://avantti.com.ar/events/puzzle-club-san-juan-9na-edicion'
 
 // ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
 const T = {
@@ -143,12 +144,14 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
 
         <a
           className="site-nav__cta"
-          href="#fecha"
+          href={TICKET_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           data-floating-cta
-          onClick={() => trackEvent('click_reserva', {
-            button_text: 'Lista de prioridad',
+          onClick={() => trackEvent('click_compra_entradas', {
+            button_text: 'Comprar entradas',
             button_location: 'navbar',
-            destination_url: '#fecha',
+            destination_url: TICKET_URL,
           })}
           style={{
             fontFamily: font.body,
@@ -167,7 +170,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
             transition: 'all 0.4s',
           }}
         >
-          Lista de prioridad
+          Comprar entradas
         </a>
       </div>
     </nav>
@@ -459,7 +462,7 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Sábado 12 de septiembre
+          Sábado 24 de octubre
         </h2>
 
         <p
@@ -474,8 +477,14 @@ function NextEventSection() {
             marginBottom: 38,
           }}
         >
-          8va edición · Cupos agotados
+          9na edición · Inscripciones abiertas
         </p>
+
+        <div className="next-event-section__details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginBottom: 40 }}>
+          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
+            Horario: 17:00 a 20:45
+          </p>
+        </div>
 
         <p
           className="next-event-section__description"
@@ -489,19 +498,18 @@ function NextEventSection() {
             margin: '0 auto 46px',
           }}
         >
-          Las entradas para nuestra 8va edición se agotaron en solo 3 horas.<br />
-          ¿Te quedaste afuera? Sumate a la lista de prioridad y enterate antes que nadie cuando abramos la próxima fecha.
+          Una nueva tarde para armar, competir y compartir en Puzzle Club San Juan.
         </p>
 
         <a
-          href={PRIORITY_FORM_URL}
+          href={TICKET_URL}
           target="_blank"
           rel="noopener noreferrer"
           data-floating-cta
-          onClick={() => trackEvent('click_reserva', {
-            button_text: 'Sumarme a la lista de prioridad',
+          onClick={() => trackEvent('click_compra_entradas', {
+            button_text: 'Comprar entradas',
             button_location: 'next_event',
-            destination_url: PRIORITY_FORM_URL,
+            destination_url: TICKET_URL,
           })}
           style={{
             display: 'inline-block',
@@ -515,19 +523,44 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Sumarme a la lista de prioridad
+          Comprar entradas
         </a>
 
-        <p
-          style={{
-            fontFamily: font.body,
-            fontSize: 13,
-            color: T.textMuted,
-            margin: 0,
-          }}
-        >
-          Próxima edición: fecha a confirmar.
-        </p>
+        <div style={{ marginTop: 36 }}>
+          <p
+            style={{
+              fontFamily: font.body,
+              fontSize: 14,
+              color: T.textMuted,
+              margin: '0 0 16px',
+            }}
+          >
+            ¿Querés enterarte antes que nadie de las próximas ediciones?
+          </p>
+          <a
+            href={PRIORITY_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('click_lista_prioridad', {
+              button_text: 'Sumarme a la lista de prioridad',
+              button_location: 'next_event',
+              destination_url: PRIORITY_FORM_URL,
+            })}
+            style={{
+              display: 'inline-block',
+              fontFamily: font.body,
+              fontSize: 14,
+              fontWeight: 700,
+              backgroundColor: 'transparent',
+              border: `1.5px solid ${T.terracotta}`,
+              color: T.terracotta,
+              padding: '14px 30px',
+              borderRadius: 100,
+            }}
+          >
+            Sumarme a la lista de prioridad
+          </a>
+        </div>
       </div>
     </section>
   )
@@ -704,16 +737,18 @@ function FinalInvitation() {
 
           <div style={{ display: 'flex', gap: 16 }}>
             <a
-              href="#fecha"
+              href={TICKET_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               data-floating-cta
-              onClick={() => trackEvent('click_reserva', {
-                button_text: 'Sumate a la próxima tarde',
+              onClick={() => trackEvent('click_compra_entradas', {
+                button_text: 'Comprar entradas',
                 button_location: 'final_invitation',
-                destination_url: '#fecha',
+                destination_url: TICKET_URL,
               })}
               style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '15px 36px', borderRadius: 100 }}
             >
-              Sumate a la próxima tarde
+              Comprar entradas
             </a>
             <a
               href="https://www.instagram.com/puzzleclubsj/"
@@ -872,7 +907,7 @@ export default function App() {
 
       <Footer />
 
-      <FloatingReserveButton destinationUrl={PRIORITY_FORM_URL} />
+      <FloatingReserveButton destinationUrl={TICKET_URL} />
     </div>
   )
 }

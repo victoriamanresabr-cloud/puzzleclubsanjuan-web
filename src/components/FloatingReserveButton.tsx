@@ -40,14 +40,14 @@ export default function FloatingReserveButton({ destinationUrl }: FloatingReserv
       href={destinationUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Lista de prioridad"
-      onClick={() => trackEvent('click_reserva', {
-        button_text: 'Lista de prioridad',
+      aria-label="Comprar entradas"
+      onClick={() => trackEvent('click_compra_entradas', {
+        button_text: 'Comprar entradas',
         button_location: 'floating_mobile',
         destination_url: destinationUrl,
       })}
     >
-      Lista de prioridad
+      Comprar entradas
     </a>
   )
 }
