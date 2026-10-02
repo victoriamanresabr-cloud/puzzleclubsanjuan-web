@@ -42,6 +42,18 @@ const galleryImages = [
     src: '/gallery/ambiente-14.jpg',
     alt: 'Participantes celebrando una premiación de Puzzle Club',
   },
+  {
+    src: '/images/edicion-8-ambiente.jpg',
+    alt: 'Participantes armando rompecabezas en la 8va edición',
+  },
+  {
+    src: '/images/edicion-8-equipo.jpg',
+    alt: 'Equipo junto a su rompecabezas en la 8va edición',
+  },
+  {
+    src: '/images/edicion-8-ganadoras.jpg',
+    alt: 'Ganadoras de la 8va edición con sus premios',
+  },
 ]
 
 export default function GallerySection() {
