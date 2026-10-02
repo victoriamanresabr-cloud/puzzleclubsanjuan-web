@@ -244,8 +244,8 @@ function HeroSection() {
 // ─── SOCIAL PROOF ────────────────────────────────────────────────────────────
 function SocialProof() {
   const highlights = [
-    { value: '7 ediciones', detail: 'realizadas en San Juan' },
-    { value: '+225 participaciones', detail: 'alrededor de una mesa y un rompecabezas' },
+    { value: '8 ediciones', detail: 'realizadas en San Juan' },
+    { value: '+250 participaciones', detail: 'alrededor de una mesa y un rompecabezas' },
     { value: 'Parejas y equipos', detail: 'dos maneras de vivir la experiencia' },
   ]
 
