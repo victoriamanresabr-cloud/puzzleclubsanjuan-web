@@ -17,7 +17,7 @@ const IMG = {
 }
 
 const PRIORITY_FORM_URL = 'https://forms.gle/etgyLXzQyXknKxfw9'
-const TICKET_URL = 'https://avantti.com.ar/events/puzzle-club-san-juan-9na-edicion'
+const WHATSAPP_CHANNEL_URL = 'https://whatsapp.com/channel/0029VbBwFAX8fewsv1E6Fa3t'
 
 // ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
 const T = {
@@ -144,14 +144,14 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
 
         <a
           className="site-nav__cta"
-          href={TICKET_URL}
+          href={WHATSAPP_CHANNEL_URL}
           target="_blank"
           rel="noopener noreferrer"
           data-floating-cta
-          onClick={() => trackEvent('click_compra_entradas', {
-            button_text: 'Comprar entradas',
+          onClick={() => trackEvent('click_whatsapp_community', {
+            button_text: 'Sumarme al canal de WhatsApp',
             button_location: 'navbar',
-            destination_url: TICKET_URL,
+            destination_url: WHATSAPP_CHANNEL_URL,
           })}
           style={{
             fontFamily: font.body,
@@ -170,7 +170,7 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
             transition: 'all 0.4s',
           }}
         >
-          Comprar entradas
+          Sumarme al canal de WhatsApp
         </a>
       </div>
     </nav>
@@ -244,8 +244,8 @@ function HeroSection() {
 // ─── SOCIAL PROOF ────────────────────────────────────────────────────────────
 function SocialProof() {
   const highlights = [
-    { value: '8 ediciones', detail: 'realizadas en San Juan' },
-    { value: '+250 participaciones', detail: 'alrededor de una mesa y un rompecabezas' },
+    { value: '9 ediciones', detail: 'realizadas en San Juan' },
+    { value: '+280 participaciones', detail: 'alrededor de una mesa y un rompecabezas' },
     { value: 'Parejas y equipos', detail: 'dos maneras de vivir la experiencia' },
   ]
 
@@ -474,10 +474,22 @@ function NextEventSection() {
             color: T.terracotta,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            marginBottom: 38,
+            marginBottom: 16,
           }}
         >
-          9na edición · Inscripciones abiertas
+          9na edición · Entradas agotadas
+        </p>
+
+        <p
+          style={{
+            fontFamily: font.body,
+            fontSize: 15,
+            fontWeight: 700,
+            color: T.textBody,
+            margin: '0 0 38px',
+          }}
+        >
+          Entradas agotadas en 30 minutos
         </p>
 
         <div className="next-event-section__details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginBottom: 40 }}>
@@ -501,15 +513,28 @@ function NextEventSection() {
           Una nueva tarde para armar, competir y compartir en Puzzle Club San Juan.
         </p>
 
+        <p
+          style={{
+            fontFamily: font.body,
+            fontSize: 15,
+            color: T.textMuted,
+            lineHeight: 1.65,
+            maxWidth: 580,
+            margin: '0 auto 24px',
+          }}
+        >
+          ¿Te quedaste afuera? Sumate al canal de WhatsApp para enterarte de las próximas ediciones y aperturas de inscripciones.
+        </p>
+
         <a
-          href={TICKET_URL}
+          href={WHATSAPP_CHANNEL_URL}
           target="_blank"
           rel="noopener noreferrer"
           data-floating-cta
-          onClick={() => trackEvent('click_compra_entradas', {
-            button_text: 'Comprar entradas',
+          onClick={() => trackEvent('click_whatsapp_community', {
+            button_text: 'Sumarme al canal de WhatsApp',
             button_location: 'next_event',
-            destination_url: TICKET_URL,
+            destination_url: WHATSAPP_CHANNEL_URL,
           })}
           style={{
             display: 'inline-block',
@@ -523,7 +548,7 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Comprar entradas
+          Sumarme al canal de WhatsApp
         </a>
 
         <div style={{ marginTop: 36 }}>
@@ -625,18 +650,18 @@ function WhatsAppCommunitySection() {
             margin: '0 auto 42px',
           }}
         >
-          Novedades, próximas fechas, actividades y avisos importantes de
-          Puzzle Club San Juan, directamente por WhatsApp.
+          Novedades, próximas fechas, apertura de inscripciones y avisos
+          importantes de Puzzle Club San Juan, directamente por WhatsApp.
         </p>
 
         <a
-          href="https://whatsapp.com/channel/0029VbBwFAX8fewsv1E6Fa3t"
+          href={WHATSAPP_CHANNEL_URL}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent('click_whatsapp_community', {
             button_text: 'Unirme a la comunidad',
             button_location: 'whatsapp_community',
-            destination_url: 'https://whatsapp.com/channel/0029VbBwFAX8fewsv1E6Fa3t',
+            destination_url: WHATSAPP_CHANNEL_URL,
           })}
           style={{
             display: 'inline-block',
@@ -737,18 +762,18 @@ function FinalInvitation() {
 
           <div style={{ display: 'flex', gap: 16 }}>
             <a
-              href={TICKET_URL}
+              href={WHATSAPP_CHANNEL_URL}
               target="_blank"
               rel="noopener noreferrer"
               data-floating-cta
-              onClick={() => trackEvent('click_compra_entradas', {
-                button_text: 'Comprar entradas',
+              onClick={() => trackEvent('click_whatsapp_community', {
+                button_text: 'Sumarme al canal de WhatsApp',
                 button_location: 'final_invitation',
-                destination_url: TICKET_URL,
+                destination_url: WHATSAPP_CHANNEL_URL,
               })}
               style={{ fontFamily: font.body, fontSize: 14, fontWeight: 700, backgroundColor: T.terracotta, color: T.white, padding: '15px 36px', borderRadius: 100 }}
             >
-              Comprar entradas
+              Sumarme al canal de WhatsApp
             </a>
             <a
               href="https://www.instagram.com/puzzleclubsj/"
@@ -907,7 +932,7 @@ export default function App() {
 
       <Footer />
 
-      <FloatingReserveButton destinationUrl={TICKET_URL} />
+      <FloatingReserveButton destinationUrl={WHATSAPP_CHANNEL_URL} />
     </div>
   )
 }

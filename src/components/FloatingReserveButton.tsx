@@ -40,14 +40,14 @@ export default function FloatingReserveButton({ destinationUrl }: FloatingReserv
       href={destinationUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Comprar entradas"
-      onClick={() => trackEvent('click_compra_entradas', {
-        button_text: 'Comprar entradas',
+      aria-label="Sumarme al canal de WhatsApp"
+      onClick={() => trackEvent('click_whatsapp_community', {
+        button_text: 'Sumarme al canal de WhatsApp',
         button_location: 'floating_mobile',
         destination_url: destinationUrl,
       })}
     >
-      Comprar entradas
+      Sumarme al canal de WhatsApp
     </a>
   )
 }
