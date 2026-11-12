@@ -447,7 +447,7 @@ function NextEventSection() {
             marginBottom: 26,
           }}
         >
-          Próximo encuentro
+          PRÓXIMO ENCUENTRO
         </span>
 
         <h2
@@ -462,7 +462,7 @@ function NextEventSection() {
             marginBottom: 18,
           }}
         >
-          Sábado 24 de octubre
+          ¡Nos vemos en diciembre!
         </h2>
 
         <p
@@ -477,26 +477,8 @@ function NextEventSection() {
             marginBottom: 16,
           }}
         >
-          9na edición · Entradas agotadas
+          10MA EDICIÓN · PRÓXIMAMENTE
         </p>
-
-        <p
-          style={{
-            fontFamily: font.body,
-            fontSize: 15,
-            fontWeight: 700,
-            color: T.textBody,
-            margin: '0 0 38px',
-          }}
-        >
-          Entradas agotadas en 30 minutos
-        </p>
-
-        <div className="next-event-section__details" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 22, marginBottom: 40 }}>
-          <p style={{ fontFamily: font.body, fontSize: 15, fontWeight: 700, color: T.textBody, letterSpacing: '0.02em' }}>
-            Horario: 17:00 a 20:45
-          </p>
-        </div>
 
         <p
           className="next-event-section__description"
@@ -510,7 +492,7 @@ function NextEventSection() {
             margin: '0 auto 46px',
           }}
         >
-          Una nueva tarde para armar, competir y compartir en Puzzle Club San Juan.
+          Después de una 9na edición que agotó sus entradas en solo 30 minutos, nos preparamos para volver a encontrarnos.
         </p>
 
         <p
@@ -523,7 +505,7 @@ function NextEventSection() {
             margin: '0 auto 24px',
           }}
         >
-          ¿Te quedaste afuera? Sumate al canal de WhatsApp para enterarte de las próximas ediciones y aperturas de inscripciones.
+          En noviembre hacemos una pausa. Muy pronto anunciaremos la fecha y los detalles de nuestro próximo encuentro.
         </p>
 
         <a
@@ -551,41 +533,6 @@ function NextEventSection() {
           Sumarme al canal de WhatsApp
         </a>
 
-        <div style={{ marginTop: 36 }}>
-          <p
-            style={{
-              fontFamily: font.body,
-              fontSize: 14,
-              color: T.textMuted,
-              margin: '0 0 16px',
-            }}
-          >
-            ¿Querés enterarte antes que nadie de las próximas ediciones?
-          </p>
-          <a
-            href={PRIORITY_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent('click_lista_prioridad', {
-              button_text: 'Sumarme a la lista de prioridad',
-              button_location: 'next_event',
-              destination_url: PRIORITY_FORM_URL,
-            })}
-            style={{
-              display: 'inline-block',
-              fontFamily: font.body,
-              fontSize: 14,
-              fontWeight: 700,
-              backgroundColor: 'transparent',
-              border: `1.5px solid ${T.terracotta}`,
-              color: T.terracotta,
-              padding: '14px 30px',
-              borderRadius: 100,
-            }}
-          >
-            Sumarme a la lista de prioridad
-          </a>
-        </div>
       </div>
     </section>
   )
