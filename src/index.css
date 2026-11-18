@@ -52,6 +52,70 @@ img { display: block; }
   display: none;
 }
 
+.home-rental {
+  background: var(--color-cream);
+  padding: 132px 80px;
+  scroll-margin-top: 100px;
+}
+
+.home-rental__inner { max-width: 1180px; margin: 0 auto; }
+.home-rental__header { max-width: 720px; margin: 0 auto 52px; text-align: center; }
+.home-rental__eyebrow {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--color-terracotta);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.home-rental h2, .home-rental h3, .home-rental dd {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.home-rental h2 { font-size: clamp(38px, 4.5vw, 58px); line-height: 1.12; margin-bottom: 24px; }
+.home-rental h3 { font-size: 30px; line-height: 1.2; margin-bottom: 16px; }
+.home-rental p { font-size: 16px; line-height: 1.8; color: #7A7A7A; }
+.home-rental__header p { font-size: 19px; color: #3A3A3A; }
+.home-rental__photo { margin-bottom: 56px; }
+.home-rental__photo img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; object-position: center 50%; }
+.home-rental__photo figcaption { margin-top: 10px; color: #7A7A7A; font-size: 12px; line-height: 1.6; }
+.home-rental__photo a { text-decoration: underline; text-underline-offset: 3px; }
+.home-rental__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+.home-rental__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0 20px; }
+.home-rental dt { font-size: 12px; color: #7A7A7A; margin-bottom: 8px; }
+.home-rental dd { font-size: 36px; color: var(--color-terracotta); line-height: 1.2; }
+.home-rental dd small { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0; }
+.home-rental__coordination { padding: 32px; background: var(--color-cream-warm); }
+.home-rental__coordination h3 { font-size: 27px; }
+.home-rental__coordination p + p { margin-top: 16px; }
+.home-rental__conditions { margin-top: 36px; border-block: 1px solid var(--color-warm-border); }
+.home-rental__conditions summary { padding: 22px 0; cursor: pointer; font-weight: 700; color: var(--color-olive); }
+.home-rental__conditions p { padding-bottom: 24px; max-width: 780px; color: #3A3A3A; }
+.home-rental__actions { margin-top: 32px; }
+.home-rental__cta { display: inline-block; padding: 18px 36px; border-radius: 100px; background: var(--color-terracotta); color: white; font-size: 16px; font-weight: 700; text-align: center; }
+.home-rental__actions p { margin-top: 12px; font-size: 14px; }
+.home-rental a:focus-visible, .home-rental summary:focus-visible { outline: 3px solid var(--color-olive); outline-offset: 5px; }
+
+@media (max-width: 1024px) {
+  .home-rental { padding: 104px 48px; }
+  .home-rental__grid { gap: 32px; }
+}
+
+@media (max-width: 767px) {
+  .home-rental { padding: 88px 22px; scroll-margin-top: 80px; }
+  .home-rental__header { margin-bottom: 32px; }
+  .home-rental__header p { font-size: 17px; }
+  .home-rental__photo { margin-bottom: 36px; }
+  .home-rental__photo img { aspect-ratio: 3 / 2; }
+  .home-rental__grid { grid-template-columns: 1fr; }
+  .home-rental__coordination { padding: 26px 22px; }
+  .home-rental h3 { font-size: 27px; }
+  .home-rental dd { font-size: clamp(28px, 8vw, 36px); }
+  .home-rental__cta { display: block; padding: 16px 22px; }
+}
+
 .press-section__logo {
   filter: grayscale(100%);
   opacity: 0.65;

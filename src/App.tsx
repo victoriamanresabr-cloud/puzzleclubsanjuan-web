@@ -3,6 +3,7 @@ import FaqSection from './components/FaqSection'
 import FloatingReserveButton from './components/FloatingReserveButton'
 import GallerySection from './components/GallerySection'
 import PressSection from './components/PressSection'
+import HomeRentalSection from './components/HomeRentalSection'
 import useScrollTracking from './hooks/useScrollTracking'
 import { trackEvent } from './utils/analytics'
 import TesoroApp from './TesoroApp'
@@ -119,10 +120,11 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
   </div>
 </a>
 
-        <div className="site-nav__links" style={{ display: 'flex', gap: 64 }}>
+        <div className="site-nav__links" style={{ display: 'flex', gap: 24 }}>
           {[
             { label: 'La experiencia', href: '#experiencia' },
             { label: 'Próxima fecha', href: '#fecha' },
+            { label: 'En casa', href: '#en-casa' },
             { label: 'Testimonios', href: '#testimonios' },
           ].map(({ label, href }) => (
             <a
@@ -866,6 +868,8 @@ export default function App() {
       />
 
       <NextEventSection />
+
+      <HomeRentalSection />
 
       <WhatsAppCommunitySection />
 
